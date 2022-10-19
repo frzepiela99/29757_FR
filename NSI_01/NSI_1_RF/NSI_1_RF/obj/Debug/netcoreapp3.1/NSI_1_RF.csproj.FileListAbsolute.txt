@@ -1,0 +1,13 @@
+X:\NSI\NSI_01\NSI_1_RF\NSI_1_RF\bin\Debug\netcoreapp3.1\NSI_1_RF.exe
+X:\NSI\NSI_01\NSI_1_RF\NSI_1_RF\bin\Debug\netcoreapp3.1\NSI_1_RF.deps.json
+X:\NSI\NSI_01\NSI_1_RF\NSI_1_RF\bin\Debug\netcoreapp3.1\NSI_1_RF.runtimeconfig.json
+X:\NSI\NSI_01\NSI_1_RF\NSI_1_RF\bin\Debug\netcoreapp3.1\NSI_1_RF.runtimeconfig.dev.json
+X:\NSI\NSI_01\NSI_1_RF\NSI_1_RF\bin\Debug\netcoreapp3.1\NSI_1_RF.dll
+X:\NSI\NSI_01\NSI_1_RF\NSI_1_RF\bin\Debug\netcoreapp3.1\NSI_1_RF.pdb
+X:\NSI\NSI_01\NSI_1_RF\NSI_1_RF\obj\Debug\netcoreapp3.1\NSI_1_RF.csprojAssemblyReference.cache
+X:\NSI\NSI_01\NSI_1_RF\NSI_1_RF\obj\Debug\netcoreapp3.1\NSI_1_RF.AssemblyInfoInputs.cache
+X:\NSI\NSI_01\NSI_1_RF\NSI_1_RF\obj\Debug\netcoreapp3.1\NSI_1_RF.AssemblyInfo.cs
+X:\NSI\NSI_01\NSI_1_RF\NSI_1_RF\obj\Debug\netcoreapp3.1\NSI_1_RF.csproj.CoreCompileInputs.cache
+X:\NSI\NSI_01\NSI_1_RF\NSI_1_RF\obj\Debug\netcoreapp3.1\NSI_1_RF.dll
+X:\NSI\NSI_01\NSI_1_RF\NSI_1_RF\obj\Debug\netcoreapp3.1\NSI_1_RF.pdb
+X:\NSI\NSI_01\NSI_1_RF\NSI_1_RF\obj\Debug\netcoreapp3.1\NSI_1_RF.genruntimeconfig.cache

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "NSI_1_RF/1.0.0": {
+        "runtime": {
+          "NSI_1_RF.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "NSI_1_RF/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
