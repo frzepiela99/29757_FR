@@ -1,119 +1,124 @@
 ﻿using System;
 
-namespace NSI_01_FR
+namespace HelloWorld
 {
-    abstract class Container
+    abstract class Container<T>
     {
         protected int pointer = -1;
-        protected int[] buffer = new int[10];
-        public abstract int pop();
-        public abstract void push(int value);
+        protected T[] buffer = new T[10];
+        protected int size = 10;
         public abstract void show();
-
-        public void clear()
+        public abstract T pop();
+        public abstract void push(T value);
+        public Container() { }
+        public Container(int size_)
         {
-            buffer = new int[10];
+            if (size > 0)
+            {
+                buffer = new T[size_];
+                size = size_;
+            }
+        }
+        public void Clear()
+        {
+            buffer = new T[10];
             pointer = -1;
         }
-
-        public int getcount()
+        public int GetCount()
         {
             return pointer + 1;
         }
-
-        public Boolean isempty()
+        public Boolean IsEmpty()
         {
             if (pointer == -1)
                 return true;
             else
                 return false;
         }
-
-        public Boolean isfull()
+        public Boolean IsFull()
         {
-            if (pointer + 1 == 10)
+            if (pointer == size - 1)
                 return true;
             else
                 return false;
         }
-
     }
-    class Kolejka : Container
+    class Kolejka<T> : Container<T>
     {
-        public override int pop()
+        public Kolejka(int size) : base(size)
         {
-            int tmp = buffer[0];
+
+        }
+        public override T pop()
+        {
+            T wartosc = buffer[0];
             for (int i = 1; i <= pointer; i++)
             {
                 buffer[i - 1] = buffer[i];
             }
             pointer--;
             if (pointer < -1)
-            {
                 pointer = -1;
-            }
-            return tmp;
+            return wartosc;
         }
-        public override void push(int value)
+
+        public override void push(T value)
         {
             pointer++;
-            if (pointer < 10)
-            {
+            if (pointer < size)
                 buffer[pointer] = value;
-            }
             else
-            {
-                pointer--;
-            }
+                pointer = size - 1;
         }
 
         public override void show()
         {
-            Console.Write("Kolejka: ");
+            Console.WriteLine("Kolejka");
             for (int i = 0; i <= pointer; i++)
             {
                 Console.Write(buffer[i]);
-                Console.Write("  ");
+                Console.Write(" ");
             }
-            Console.WriteLine("  ");
+            Console.WriteLine(" ");
         }
     }
-    class Stos : Container
+    class Stos<T> : Container<T>
     {
-        public override void push(int value)
+        public Stos(int size) : base(size)
         {
-            pointer++;
-            if (pointer < 10)
-            {
-                buffer[pointer] = value;
-            }
-            else
-            {
-                pointer--;
-            }
+
         }
 
-        public override int pop()
-        {
 
+
+        public override T pop()
+        {
             if (pointer < 0)
-            {
                 pointer = 0;
-            }
-            int tmp1 = buffer[pointer];
+            T val = buffer[pointer];
             pointer--;
-            return tmp1;
+            return val;
+        }
+
+        public override void push(T value)
+        {
+            pointer++;
+            if (pointer < size)
+                buffer[pointer] = value;
+            else
+                pointer = size - 1;
         }
 
         public override void show()
         {
-            Console.Write("Stos: ");
+
+            Console.WriteLine("Stos");
             for (int i = 0; i <= pointer; i++)
             {
                 Console.Write(buffer[i]);
-                Console.Write("  ");
+                Console.Write(" ");
             }
-            Console.WriteLine("  ");
+            Console.WriteLine(" ");
         }
     }
     class Program
@@ -122,7 +127,7 @@ namespace NSI_01_FR
         {
             Console.WriteLine("Filip Rzepiela Grupa P2");
 
-            Kolejka kolejka1 = new Kolejka();
+            Kolejka<int> kolejka1 = new Kolejka<int>(4);
             kolejka1.push(1);
             kolejka1.push(5);
             kolejka1.show();
@@ -132,17 +137,17 @@ namespace NSI_01_FR
             kolejka1.show();
             kolejka1.pop();
             kolejka1.show();
-            Console.WriteLine(kolejka1.getcount());
+            Console.WriteLine(kolejka1.GetCount());
             kolejka1.push(4);
             kolejka1.push(5);
             kolejka1.show();
-            Console.WriteLine(kolejka1.getcount());
-            kolejka1.clear();
+            Console.WriteLine(kolejka1.GetCount());
+            kolejka1.Clear();
             kolejka1.show();
-            Console.WriteLine(kolejka1.getcount());
-            Console.WriteLine(kolejka1.isempty());
+            Console.WriteLine(kolejka1.GetCount());
+            Console.WriteLine(kolejka1.IsEmpty());
             kolejka1.push(2);
-            Console.WriteLine(kolejka1.isempty());
+            Console.WriteLine(kolejka1.IsEmpty());
             kolejka1.push(2);
             kolejka1.push(2);
             kolejka1.push(2);
@@ -153,10 +158,10 @@ namespace NSI_01_FR
             kolejka1.push(2);
             kolejka1.push(2);
             kolejka1.show();
-            Console.WriteLine(kolejka1.getcount());
-            Console.WriteLine(kolejka1.isfull());
+            Console.WriteLine(kolejka1.GetCount());
+            Console.WriteLine(kolejka1.IsFull());
 
-            Stos stosik1 = new Stos();
+            Stos<int> stosik1 = new Stos<int>(3);
             stosik1.push(2);
             stosik1.push(4);
             stosik1.show();
@@ -164,12 +169,12 @@ namespace NSI_01_FR
             stosik1.show();
             stosik1.pop();
             stosik1.show();
-            Console.WriteLine(stosik1.getcount());
-            Console.WriteLine(stosik1.isfull());
+            Console.WriteLine(stosik1.GetCount());
+            Console.WriteLine(stosik1.IsFull());
             stosik1.pop();
             stosik1.pop();
             stosik1.show();
-            Console.WriteLine(stosik1.isempty());
+            Console.WriteLine(stosik1.IsEmpty());
         }
     }
 }
